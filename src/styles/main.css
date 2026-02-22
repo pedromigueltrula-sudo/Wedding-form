@@ -399,3 +399,16 @@ body {
 .phone-box a:hover {
   opacity: 0.8;
 }
+
+.full-screen-success .step-container h2 {
+  color: #ffffff;
+}
+
+.full-screen-success .step-container p {
+  color: #f1f1f1;
+}
+
+.full-screen-success .step-container strong {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
