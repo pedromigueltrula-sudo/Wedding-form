@@ -59,7 +59,7 @@ export default function App() {
     return (
         <div className="app-container">
             {/* Hide header on step 0 so the landing background is full screen */}
-            {step !== 0 && (
+            {step !== 0 && step !== 5 && (
                 <header className="header">
                     <h1>Victoria & Pedro</h1>
                     <p className="subtitle">Nuestra Boda</p>
@@ -404,13 +404,15 @@ export default function App() {
 
                     {/* STEP 5: Success */}
                     {step === 5 && (
+                       <div className="full-screen-success">
                         <FormStep key="step5" direction={direction}>
                             <h2>¡Muchas Gracias!</h2>
                             <p>Hemos recibido tus respuestas correctamente.</p>
                             <p style={{ marginTop: '1rem' }}>¡Tenemos muchas ganas de celebrar este día contigo!</p>
                             <p style={{ marginTop: '1.2rem' }}>Vuestra presencia es nuestro mejor regalo. Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:</p>
                             <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: XXXX XXXX XXXX XXXX XXXX</p>
-                        </FormStep>
+                                </FormStep>
+                        </div>
                     )}
 
                 </AnimatePresence>

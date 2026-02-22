@@ -339,3 +339,33 @@ body {
   font-weight: 500;
   color: var(--color-primary);
 }
+
+/* SUCCESS STEP - Fondo imagen */
+.full-screen-success {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url('/bg-gracias.jpg') no-repeat center center;
+
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 50;
+  padding: 1rem;
+}
+
+/* Mantiene el efecto glass del contenedor */
+.full-screen-success .step-container {
+  background: rgba(20, 30, 20, 0.45);
+  backdrop-filter: blur(10px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
