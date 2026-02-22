@@ -73,7 +73,7 @@ export default function App() {
                     {step === 0 && (
                         <FormStep key="step0" direction={direction} isIntro={true}>
                             <div className="intro-content">
-                                <h1 className="landing-title">✨ Nos casamos ✨</h1>
+                                <h1 className="landing-title" style={{ fontSize: 'clamp(1.8rem, 5vw, 2.6rem)' }}>✨ Nos casamos ✨</h1>
 
                                 <div className="landing-text">
                                     <p>Con muchísima ilusión queremos compartir una noticia muy especial:</p>
@@ -224,6 +224,7 @@ export default function App() {
 
                             <div className="accommodation-info text-left text-sm mb-4" style={{ lineHeight: '1.5', background: 'rgba(0,0,0,0.03)', padding: '1.5rem', borderRadius: '8px', marginBottom: '1.5rem', textAlign: 'left' }}>
                                 <p>Para vuestra comodidad, hemos gestionado tarifas especiales de alojamiento para la boda en el Palacio de los Acevedo y en los alojamientos de Villa Pasiega.</p>
+                                <p style={{ marginTop: '0.8rem', fontWeight: '500' }}>❗ <strong>Importante:</strong> Para acceder a las tarifas especiales, es necesario realizar la reserva por teléfono e indicar que vienes como invitado de nuestra boda. Te recomendamos no efectuar la reserva directamente a través del portal web, ya que en ese caso no se aplicarán dichas condiciones.</p>
                                 <p style={{ marginTop: '0.8rem' }}>Los hoteles y apartamentos de Villa Pasiega (incluidos el Hotel SPA Villa Pasiega, el Hotel Los Pasiegos, los Apartamentos Villa Pasiega y los Apartamentos La Albarca) se encuentran todos en la localidad de Hoznayo, muy cerca unos de otros. El Palacio de los Acevedo está situado aproximadamente a 900 m del complejo de Villa Pasiega, lo que supone unos 10–12 minutos caminando o unos pocos minutos en coche.</p>
                                 <p style={{ marginTop: '0.8rem' }}>Esto hace que alojarse en cualquiera de estas opciones sea muy cómodo para moverse rápido al Palacio de los Acevedo.</p>
                                 <p style={{ marginTop: '0.8rem' }}>Los precios indicados corresponden a habitación o apartamento por noche e incluyen las condiciones especificadas en cada caso (desayuno, acceso al spa y/o posibilidad de alojarse con mascotas).</p>
@@ -407,6 +408,8 @@ export default function App() {
                             <h2>¡Muchas Gracias!</h2>
                             <p>Hemos recibido tus respuestas correctamente.</p>
                             <p style={{ marginTop: '1rem' }}>¡Tenemos muchas ganas de celebrar este día contigo!</p>
+                            <p style={{ marginTop: '1.2rem' }}>Vuestra presencia es nuestro mejor regalo. Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:</p>
+                            <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: XXXX XXXX XXXX XXXX XXXX</p>
                         </FormStep>
                     )}
 
