@@ -364,8 +364,8 @@ body {
 
 /* Mantiene el efecto glass del contenedor */
 .full-screen-success .step-container {
-  background: rgba(20, 30, 20, 0.45);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(10px);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
