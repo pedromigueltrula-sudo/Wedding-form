@@ -87,7 +87,7 @@ body {
   width: 100vw;
   height: 100vh;
   /* Reemplaza este archivo por tu propia foto en la carpeta public! */
-  background: url('/bg.jpg') no-repeat center center;
+  background: url('/bg.jpeg') no-repeat center center;
   background-size: cover;
   z-index: 50;
   display: flex;
