@@ -1,8 +1,8 @@
 // Replace this URL with your published Google Apps Script Web App URL
-const SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKbfgTGGkGDS73k9nYScv_wj9xt2nFzQaIKKnyHJDvEKkWb9QhgmKHEQxv1mfFiGEb/exec';
 
 export const submitForm = async (formData) => {
-    if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
+    if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxKbfgTGGkGDS73k9nYScv_wj9xt2nFzQaIKKnyHJDvEKkWb9QhgmKHEQxv1mfFiGEb/exec') {
         console.warn("Script URL not configured. Simulating successful submission for dev.");
         // Faster timeout for dev testing
         return new Promise(resolve => setTimeout(resolve, 400));
