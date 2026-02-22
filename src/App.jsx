@@ -250,18 +250,12 @@ export default function App() {
                                 <p>Si queréis más detalle, el <a href="https://drive.google.com/file/d/1rUMrNDAwR0ccgzefl0VJNvy2YQNDBo4t/view?usp=sharing" target="_blank" rel="noreferrer" style={{ color: '#0066cc', fontWeight: 'bold', textDecoration: 'underline' }}>dossier de tarifas de las habitaciones está aquí</a>.</p>
 
                                 <p style={{ marginTop: '1.5rem' }}>Para realizar la reserva o consultar disponibilidad, podéis contactar directamente con los alojamientos:</p>
-                                <p style={{ marginTop: '0.5rem' }}>📞 Hotel Los Pasiegos:</p>
-                                <p style={{ marginBottom: '0.5rem' }}>
-                                    <a href="tel:942525090" style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }}>
-                                        942 525 090
-                                        </a>
-                                </p>
-                                <p>📞 Resto de establecimientos:</p>
-                                <p>
-                                    <a href="tel:942525962" style={{ fontWeight: 'bold', color: 'inherit', textDecoration: 'none' }}>
-                                        942 525 962
-                                    </a>
-                                </p>
+                                <div className="phone-box">
+                                <p>📞 Hotel Los Pasiegos:</p>
+                                <a href="tel:942525090">942 525 090</a>
+                                <p style={{ marginTop: '1rem' }}>📞 Resto de establecimientos:</p>
+                                <a href="tel:942525962">942 525 962</a>
+                                </div>
                             </div>
 
                             <p style={{ fontWeight: 'bold', marginBottom: '1rem' }}>¿Necesitas alojamiento para la boda?</p>

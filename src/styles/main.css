@@ -364,8 +364,38 @@ body {
 
 /* Mantiene el efecto glass del contenedor */
 .full-screen-success .step-container {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.45); /* más translúcido */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--color-text);
   border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Cuadro teléfonos centrado */
+.phone-box {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.phone-box p {
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.phone-box a {
+  display: block;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.phone-box a:hover {
+  opacity: 0.8;
 }
