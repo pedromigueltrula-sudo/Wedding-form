@@ -100,7 +100,7 @@ body {
 .intro-step-container {
   width: 100%;
   max-width: 600px;
-  background: rgba(120, 150, 200, 0.35);
+  background: rgba(20, 30, 20, 0.45);
   backdrop-filter: blur(10px);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
