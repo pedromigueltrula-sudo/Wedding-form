@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
 
 :root {
-  --color-primary: #8a9a86;
-  /* Sage Green */
-  --color-secondary: #d4cfb4;
-  /* Soft Gold/Cream */
-  --color-background: #FAF9F6;
-  /* Off-white */
-  --color-text: #2c3e2d;
-  /* Dark pine green for text */
-  --color-text-light: #5a6b5b;
+  --color-primary: #9FBFDE;   /* azul pastel elegante */
+  --color-secondary: #E6DCCB; /* crema suave (mantiene calidez) */
+  --color-background: #FAFBFD; /* blanco ligeramente frío */
+  --color-text: #2F3E4E;      /* gris azulado oscuro */
+  --color-text-light: #6B7C8F;
   --color-white: #ffffff;
   --color-error: #e57373;
 
