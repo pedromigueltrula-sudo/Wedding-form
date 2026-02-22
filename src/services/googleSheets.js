@@ -2,11 +2,6 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKbfgTGGkGDS73k9nYScv_wj9xt2nFzQaIKKnyHJDvEKkWb9QhgmKHEQxv1mfFiGEb/exec';
 
 export const submitForm = async (formData) => {
-    if (SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxKbfgTGGkGDS73k9nYScv_wj9xt2nFzQaIKKnyHJDvEKkWb9QhgmKHEQxv1mfFiGEb/exec') {
-        console.warn("Script URL not configured. Simulating successful submission for dev.");
-        // Faster timeout for dev testing
-        return new Promise(resolve => setTimeout(resolve, 400));
-    }
 
     const payload = {
         name: formData.name,
@@ -31,3 +26,5 @@ export const submitForm = async (formData) => {
     // no-cors means response is opaque, we just assume it worked if no network error
     return response;
 };
+
+
