@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary: #8a9a86;
+  /* Sage Green */
+  --color-secondary: #d4cfb4;
+  /* Soft Gold/Cream */
+  --color-background: #FAF9F6;
+  /* Off-white */
+  --color-text: #2c3e2d;
+  /* Dark pine green for text */
+  --color-text-light: #5a6b5b;
+  --color-white: #ffffff;
+  --color-error: #e57373;
+
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  --border-radius: 12px;
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+}
+
+.header h1 {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.header .subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+/* LANDING PAGE STYLES */
+.full-screen-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Reemplaza este archivo por tu propia foto en la carpeta public! */
+  background: url('/bg.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-step-container {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(20, 30, 20, 0.45);
+  backdrop-filter: blur(10px);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 1rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.landing-title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.landing-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.landing-text p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.landing-text strong {
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.maps-link {
+  display: inline-block;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  margin: var(--spacing-sm) 0 var(--spacing-md) 0;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.maps-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.signature {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-top: var(--spacing-md) !important;
+  color: var(--color-secondary);
+}
+
+.landing-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-lg);
+  border-radius: calc(var(--border-radius) - 4px);
+  margin-top: var(--spacing-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.landing-form h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-md);
+  font-weight: 500;
+}
+
+.landing-button {
+  width: 100%;
+  margin-top: var(--spacing-sm);
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+.landing-button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+}
+
+
+/* NORMAL FORM STEPS */
+.step-container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--color-white);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(138, 154, 134, 0.1);
+  text-align: center;
+  /* subtle glassmorphism */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.step-container h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.step-container p {
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.05rem;
+}
+
+/* Form Controls */
+.input-group {
+  text-align: left;
+  margin-bottom: var(--spacing-md);
+}
+
+.input-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.text-input,
+.textarea-input,
+.select-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  transition: all var(--transition-speed) ease;
+  background: var(--color-background);
+}
+
+/* En el hero, los inputs pueden ser oscuros o claros */
+.full-screen-intro .text-input {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.full-screen-intro .text-input:focus {
+  box-shadow: 0 0 0 3px rgba(212, 207, 180, 0.4);
+}
+
+.text-input:focus,
+.textarea-input:focus,
+.select-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(138, 154, 134, 0.2);
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+  justify-content: center;
+}
+
+.primary-button,
+.secondary-button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  border: none;
+}
+
+.primary-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(138, 154, 134, 0.3);
+}
+
+.primary-button:hover {
+  background-color: #768672;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 154, 134, 0.4);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.secondary-button:hover {
+  background-color: rgba(138, 154, 134, 0.05);
+}
+
+/* Radio/Checkbox groups visually enhanced */
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-label:hover {
+  background-color: rgba(138, 154, 134, 0.05);
+  border-color: var(--color-primary);
+}
+
+.option-input {
+  margin-right: 12px;
+  accent-color: var(--color-primary);
+  width: 18px;
+  height: 18px;
+}
+
+.option-input:checked+span {
+  font-weight: 500;
+  color: var(--color-primary);
+}
