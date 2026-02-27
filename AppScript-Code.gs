@@ -7,6 +7,7 @@ function doPost(e) {
   sheet.appendRow([
     new Date(), 
     parsedData.name,
+    parsedData.email,
     parsedData.phone,
     parsedData.allergies, 
     parsedData.bus, 
