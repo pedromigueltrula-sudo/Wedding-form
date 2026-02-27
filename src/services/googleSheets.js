@@ -5,6 +5,7 @@ export const submitForm = async (formData) => {
 
     const payload = {
         name: formData.name,
+        email: formData.email,
         phone: formData.phone,
         allergies: formData.allergies === 'Sí' ? formData.allergiesDetail : formData.allergies,
         bus: formData.bus,
@@ -25,6 +26,4 @@ export const submitForm = async (formData) => {
 
     // no-cors means response is opaque, we just assume it worked if no network error
     return response;
-};
-
-
+};      
