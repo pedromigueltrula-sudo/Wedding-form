@@ -32,8 +32,8 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background: radial-gradient(circle at top, #ffffff, var(--color-secondary));
+  color: #2C2C2C;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
@@ -203,11 +203,17 @@ body {
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
   box-shadow: 0 10px 30px rgba(138, 154, 134, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
   /* subtle glassmorphism */
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.step-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(138, 154, 134, 0.15);
 }
 
 .step-container h2 {
@@ -241,7 +247,7 @@ body {
 .select-input {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(159, 191, 222, 0.4);
   border-radius: 8px;
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -256,7 +262,7 @@ body {
 }
 
 .full-screen-intro .text-input:focus {
-  box-shadow: 0 0 0 3px rgba(212, 207, 180, 0.4);
+  box-shadow: 0 0 0 3px rgba(159, 191, 222, 0.2);
 }
 
 .text-input:focus,
@@ -294,7 +300,7 @@ body {
 }
 
 .primary-button:hover {
-  background-color: #768672;
+  background-color: #86A9CF;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(138, 154, 134, 0.4);
 }
@@ -324,10 +330,11 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
+  background: rgba(255,255,255,0.6);
 }
 
 .option-label:hover {
-  background-color: rgba(138, 154, 134, 0.05);
+  background-color: rgba(159, 191, 222, 0.08);
   border-color: var(--color-primary);
 }
 
@@ -405,6 +412,20 @@ body {
 
 .full-screen-success .step-container h2 {
   color: #ffffff;
+  position: relative;
+padding-bottom: 0.8rem;
+}
+
+.step-container h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--color-primary);
+  opacity: 0.6;
 }
 
 .full-screen-success .step-container p {
