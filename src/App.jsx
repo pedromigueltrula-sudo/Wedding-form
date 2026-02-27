@@ -11,6 +11,7 @@ export default function App() {
 
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         phone: '',
         allergies: '',
         allergiesDetail: '',
@@ -106,6 +107,17 @@ export default function App() {
                                         />
                                     </div>
 
+
+                                    <div className="input-group">
+                                       <input
+                                       type="email"
+                                       className="text-input"
+                                       placeholder="Tu Correo Electrónico"
+                                       value={formData.email}
+                                       onChange={(e) => handleChange('email', e.target.value)}
+                                       />
+                                    </div>
+
                                     <div className="input-group">
                                         <input
                                             type="tel"
@@ -119,9 +131,29 @@ export default function App() {
                                     <button
                                         className="primary-button landing-button"
                                         onClick={nextStep}
-                                        disabled={!formData.name.trim() || !formData.phone.trim()}
-                                        style={{ opacity: (!formData.name.trim() || !formData.phone.trim()) ? 0.5 : 1, cursor: (!formData.name.trim() || !formData.phone.trim()) ? 'not-allowed' : 'pointer' }}
-                                    >
+                                        disabled={
+                                        !formData.name.trim() ||
+                                        !formData.email.trim() ||
+                                        !formData.phone.trim() ||
+                                        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+                                        }
+                                        style={{
+                                            opacity:
+                                                (!formData.name.trim() ||
+                                                !formData.email.trim() ||
+                                                !formData.phone.trim() ||
+                                                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+                                                    ? 0.5
+                                                    : 1,
+                                            cursor:
+                                                (!formData.name.trim() ||
+                                                !formData.email.trim() ||
+                                                !formData.phone.trim() ||
+                                                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+                                                    ? 'not-allowed'
+                                                    : 'pointer'
+                                        }}
+                                        >
                                         Confirmar Asistencia
                                     </button>
                                 </div>
@@ -382,6 +414,7 @@ export default function App() {
 
                             <div style={{ textAlign: 'left', background: 'rgba(0,0,0,0.03)', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
                                 <p><strong>Nombre:</strong> {formData.name}</p>
+                                <p><strong>Email:</strong> {formData.email}</p>
                                 <p><strong>Teléfono:</strong> {formData.phone}</p>
                                 <p><strong>Dietas:</strong> {formData.allergies === 'Sí' ? formData.allergiesDetail : 'Ninguna'}</p>
                                 <p><strong>Autobús:</strong> {formData.bus}</p>
