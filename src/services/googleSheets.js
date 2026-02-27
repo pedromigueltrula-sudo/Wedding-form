@@ -1,5 +1,5 @@
 // Replace this URL with your published Google Apps Script Web App URL
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxKbfgTGGkGDS73k9nYScv_wj9xt2nFzQaIKKnyHJDvEKkWb9QhgmKHEQxv1mfFiGEb/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyjd43XbMHeL5XtA6H2QMJ1P5D0XRBndH8IQHXgSDxsF4Ls0SNuIqttZBQ3Zt7hSw3a/exec';
 
 export const submitForm = async (formData) => {
 
