@@ -109,13 +109,13 @@ export default function App() {
 
 
                                     <div className="input-group">
-                                       <input
-                                       type="email"
-                                       className="text-input"
-                                       placeholder="Tu Correo Electrónico"
-                                       value={formData.email}
-                                       onChange={(e) => handleChange('email', e.target.value)}
-                                       />
+                                        <input
+                                            type="email"
+                                            className="text-input"
+                                            placeholder="Tu Correo Electrónico"
+                                            value={formData.email}
+                                            onChange={(e) => handleChange('email', e.target.value)}
+                                        />
                                     </div>
 
                                     <div className="input-group">
@@ -132,28 +132,28 @@ export default function App() {
                                         className="primary-button landing-button"
                                         onClick={nextStep}
                                         disabled={
-                                        !formData.name.trim() ||
-                                        !formData.email.trim() ||
-                                        !formData.phone.trim() ||
-                                        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+                                            !formData.name.trim() ||
+                                            !formData.email.trim() ||
+                                            !formData.phone.trim() ||
+                                            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
                                         }
                                         style={{
                                             opacity:
                                                 (!formData.name.trim() ||
-                                                !formData.email.trim() ||
-                                                !formData.phone.trim() ||
-                                                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+                                                    !formData.email.trim() ||
+                                                    !formData.phone.trim() ||
+                                                    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
                                                     ? 0.5
                                                     : 1,
                                             cursor:
                                                 (!formData.name.trim() ||
-                                                !formData.email.trim() ||
-                                                !formData.phone.trim() ||
-                                                !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+                                                    !formData.email.trim() ||
+                                                    !formData.phone.trim() ||
+                                                    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
                                                     ? 'not-allowed'
                                                     : 'pointer'
                                         }}
-                                        >
+                                    >
                                         Confirmar Asistencia
                                     </button>
                                 </div>
@@ -212,8 +212,8 @@ export default function App() {
                     {step === 2 && (
                         <FormStep key="step2" direction={direction}>
                             <h2>Transporte</h2>
-                            <p>Hemos organizado un servicio de autobús que saldrá ese día a las XX h desde Santander para facilitar el traslado. Indícanos por favor si te gustaría reservar plaza.</p>
-                            <p style={{ marginTop: '0.8rem', marginBottom: '1.2rem', fontSize: '0.95rem' }}>El autobús recogerá a los pasajeros en Santander, "XXXX" y llegará al Palacio alrededor de las "XX" h. Al final de la celebración, saldrá del Palacio a las "XX" h para dejar a los pasajeros en el mismo lugar de recogida.</p>
+                            <p>Hemos organizado un servicio de autobús que saldrá ese día alrededor de las 11:45 h desde Santander para facilitar el traslado. Indícanos por favor si te gustaría reservar plaza.</p>
+                            <p style={{ marginTop: '0.8rem', marginBottom: '1.2rem', fontSize: '0.95rem' }}>El autobús recogerá a los pasajeros en Santander y llegará al Palacio alrededor de las "12:15" h. Al final de la celebración, saldrá del Palacio a la "1:00" h para dejar a los pasajeros en el mismo lugar de recogida.</p>
 
                             <div className="input-group options-group">
                                 <label className="option-label">
@@ -283,10 +283,10 @@ export default function App() {
 
                                 <p style={{ marginTop: '1.5rem' }}>Para realizar la reserva o consultar disponibilidad, podéis contactar directamente con los alojamientos:</p>
                                 <div className="phone-box">
-                                <p>📞 Hotel Los Pasiegos:</p>
-                                <a href="tel:942525090">942 525 090</a>
-                                <p style={{ marginTop: '1rem' }}>📞 Resto de establecimientos:</p>
-                                <a href="tel:942525962">942 525 962</a>
+                                    <p>📞 Hotel Los Pasiegos:</p>
+                                    <a href="tel:942525090">942 525 090</a>
+                                    <p style={{ marginTop: '1rem' }}>📞 Resto de establecimientos:</p>
+                                    <a href="tel:942525962">942 525 962</a>
                                 </div>
                             </div>
 
@@ -441,14 +441,14 @@ export default function App() {
 
                     {/* STEP 5: Success */}
                     {step === 5 && (
-                       <div className="full-screen-success">
-                        <FormStep key="step5" direction={direction}>
-                            <h2>¡Muchas Gracias!</h2>
-                            <p>Hemos recibido tus respuestas correctamente.</p>
-                            <p style={{ marginTop: '1rem' }}>¡Tenemos muchas ganas de celebrar este día contigo!</p>
-                            <p style={{ marginTop: '1.2rem' }}>Vuestra presencia es nuestro mejor regalo. Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:</p>
-                            <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: XXXX XXXX XXXX XXXX XXXX</p>
-                                </FormStep>
+                        <div className="full-screen-success">
+                            <FormStep key="step5" direction={direction}>
+                                <h2>¡Muchas Gracias!</h2>
+                                <p>Hemos recibido tus respuestas correctamente.</p>
+                                <p style={{ marginTop: '1rem' }}>¡Tenemos muchas ganas de celebrar este día contigo!</p>
+                                <p style={{ marginTop: '1.2rem' }}>Vuestra presencia es nuestro mejor regalo. Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:</p>
+                                <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: ES95 1583 0001 2608 6325</p>
+                            </FormStep>
                         </div>
                     )}
 
