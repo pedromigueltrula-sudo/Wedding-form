@@ -165,18 +165,6 @@ export default async function handler(req, res) {
   Con todo nuestro cariño<br/>
   Victoria y Pedro
 </p>
-
-<img 
-  src="https://victoriaypedroboda.es/boda.jpg"
-  alt="Victoria y Pedro"
-style="
-    max-width:500px;
-    width:100%;
-    margin:25px auto;
-    display:block;
-    border-radius:12px;
-  "
-/>
       
       </div>
     </div>
