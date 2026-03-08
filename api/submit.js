@@ -167,12 +167,14 @@ export default async function handler(req, res) {
 </p>
 
 <img 
-  src="https://tuboda.vercel.app/boda.jpg"
+  src="https://victoriaypedroboda.es/boda.jpg"
   alt="Victoria y Pedro"
-  style="
+style="
+    max-width:500px;
     width:100%;
-    border-radius:10px;
-    margin:20px 0;
+    margin:25px auto;
+    display:block;
+    border-radius:12px;
   "
 />
       
