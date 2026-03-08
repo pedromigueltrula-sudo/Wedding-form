@@ -1,21 +1,8 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import FormStep from './components/FormStep';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { submitForm } from './services/googleSheets';
-import Form from "./Form";
-import Info from "./Info";
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Form />} />
-        <Route path="/info" element={<Info />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
 
 export default function App() {
     const [step, setStep] = useState(0);
