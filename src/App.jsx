@@ -46,7 +46,13 @@ export default function App() {
         setIsSubmitting(true);
         setSubmitError('');
         try {
-            await submitForm(formData);
+            await fetch("/api/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            });
             setDirection(1);
             setStep(5); // Success step
         } catch (err) {
