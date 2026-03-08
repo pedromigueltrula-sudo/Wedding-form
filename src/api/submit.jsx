@@ -1,16 +1,33 @@
-const allergiesText =
-  data.allergies === "Sí"
-    ? data.allergiesDetail
-    : "Ninguna";
+import { Resend } from "resend";
 
-const accommodationText =
-  data.accommodationType === "No"
-    ? "No necesita alojamiento"
-    : `${data.accommodationType} - ${data.accommodationSpecific || ""}`;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const html = `
-<div style="background:#f8f5f0;padding:30px 15px;font-family:Georgia,serif;color:#333;">
-  <div style="max-width:600px;margin:auto;background:white;border-radius:12px;padding:35px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+export default async function handler(req, res) {
+
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  const data = req.body;
+
+  try {
+
+    const allergiesText =
+      data.allergies === "Sí"
+        ? data.allergiesDetail
+        : "Ninguna";
+
+    const accommodationText =
+      data.accommodationType === "No"
+        ? "No necesita alojamiento"
+        : `${data.accommodationType} - ${data.accommodationSpecific || ""}`;
+
+    const html = `
+    <div style="background:#f8f5f0;padding:30px 15px;font-family:Georgia,serif;color:#333;">
+      <div style="max-width:600px;margin:auto;background:white;border-radius:12px;padding:35px;box-shadow:0 8px 25px rgba(0,0,0,0.08);">
+
+
+
 
     <h1 style="text-align:center;font-weight:normal;margin-bottom:5px;">
       Victoria & Pedro
@@ -139,7 +156,37 @@ const html = `
       Con todo nuestro cariño<br/>
       Victoria y Pedro
     </p>
+      
+      </div>
+    </div>
+    `;
 
-  </div>
-</div>
-`;
+const { data: emailData, error } = await resend.emails.send({
+  from: "Victoria & Pedro <onboarding@resend.dev>",
+  to: data.email,
+  bcc: "vuestroemail@gmail.com",
+  subject: "Confirmación de asistencia – Boda Victoria & Pedro",
+  html
+});
+
+    if (error) {
+      console.error("RESEND ERROR:", error);
+      return res.status(400).json(error);
+    }
+
+    return res.status(200).json({ success: true });
+
+  } catch (err) {
+
+    console.error("SERVER ERROR:", err);
+
+    return res.status(500).json({
+      error: "Error enviando el email"
+    });
+
+  }
+
+}
+
+
+
