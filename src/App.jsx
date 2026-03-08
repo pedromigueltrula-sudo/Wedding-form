@@ -1,7 +1,21 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import FormStep from './components/FormStep';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { submitForm } from './services/googleSheets';
+import Form from "./Form";
+import Info from "./Info";
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Form />} />
+        <Route path="/info" element={<Info />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default function App() {
     const [step, setStep] = useState(0);
@@ -43,25 +57,42 @@ export default function App() {
     };
 
     const handleSubmit = async () => {
-        setIsSubmitting(true);
-        setSubmitError('');
-        try {
-            await fetch("/api/submit", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            });
-            setDirection(1);
-            setStep(5); // Success step
-        } catch (err) {
-            setSubmitError('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
-            console.error(err);
-        } finally {
-            setIsSubmitting(false);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+
+        // 1️⃣ Guardar en Google Sheets
+        await submitForm(formData);
+
+        // 2️⃣ Enviar email
+        const res = await fetch("/api/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!res.ok) {
+            throw new Error("Error enviando email");
         }
-    };
+
+        setDirection(1);
+        setStep(5);
+
+    } catch (err) {
+
+        console.error(err);
+
+        setSubmitError(
+            'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.'
+        );
+
+    } finally {
+        setIsSubmitting(false);
+    }
+};
 
     return (
         <div className="app-container">

@@ -1,4 +1,5 @@
 import { Resend } from "resend";
+import { submitForm } from './services/googleSheets';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -146,8 +147,6 @@ export default async function handler(req, res) {
       <a href="tel:942525962">942 525 962</a>
     </p>
 
-    <hr style="margin:30px 0;border:none;border-top:1px solid #eee"/>
-
 <hr style="margin:30px 0;border:none;border-top:1px solid #eee"/>
 
 <p style="text-align:center;">
@@ -159,7 +158,7 @@ export default async function handler(req, res) {
   Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:
 </p>
 
-<p style="text-align:center;font-weight:bold;margin-top:0.6rem;font-size:16px;">
+<p style="text-align:center;font-weight:bold;margin-top:0.6rem;font-size:14px;">
   IBAN: ES95 1583 0001 2608 6325
 </p>
 
@@ -167,13 +166,23 @@ export default async function handler(req, res) {
   Con todo nuestro cariño<br/>
   Victoria y Pedro
 </p>
+
+<img 
+  src="https://tuboda.vercel.app/boda.jpg"
+  alt="Victoria y Pedro"
+  style="
+    width:100%;
+    border-radius:10px;
+    margin:20px 0;
+  "
+/>
       
       </div>
     </div>
     `;
 
 const { data: emailData, error } = await resend.emails.send({
-  from: "Victoria & Pedro <onboarding@resend.dev>",
+  from: "Victoria & Pedro <noscasamos@victoriaypedroboda.es>",
   to: data.email,
   bcc: data.email,
   subject: "Confirmación de asistencia – Boda Victoria & Pedro",
