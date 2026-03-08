@@ -148,14 +148,25 @@ export default async function handler(req, res) {
 
     <hr style="margin:30px 0;border:none;border-top:1px solid #eee"/>
 
-    <p style="text-align:center;">
-      ¡Tenemos muchas ganas de celebrar este día contigo!
-    </p>
+<hr style="margin:30px 0;border:none;border-top:1px solid #eee"/>
 
-    <p style="text-align:center;margin-top:25px;font-style:italic;">
-      Con todo nuestro cariño<br/>
-      Victoria y Pedro
-    </p>
+<p style="text-align:center;">
+  ¡Tenemos muchas ganas de celebrar este día contigo!
+</p>
+
+<p style="text-align:center;margin-top:1.2rem;">
+  Vuestra presencia es nuestro mejor regalo.  
+  Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:
+</p>
+
+<p style="text-align:center;font-weight:bold;margin-top:0.6rem;font-size:16px;">
+  IBAN: ES95 1583 0001 2608 6325
+</p>
+
+<p style="text-align:center;margin-top:25px;font-style:italic;">
+  Con todo nuestro cariño<br/>
+  Victoria y Pedro
+</p>
       
       </div>
     </div>
