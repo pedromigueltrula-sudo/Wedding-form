@@ -1,5 +1,4 @@
 import { Resend } from "resend";
-import { submitForm } from './services/googleSheets';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
