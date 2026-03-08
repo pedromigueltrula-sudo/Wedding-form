@@ -164,7 +164,7 @@ export default async function handler(req, res) {
 const { data: emailData, error } = await resend.emails.send({
   from: "Victoria & Pedro <onboarding@resend.dev>",
   to: data.email,
-  bcc: "vuestroemail@gmail.com",
+  bcc: data.email,
   subject: "Confirmación de asistencia – Boda Victoria & Pedro",
   html
 });
