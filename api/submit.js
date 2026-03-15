@@ -158,7 +158,7 @@ export default async function handler(req, res) {
 </p>
 
 <p style="text-align:center;font-weight:bold;margin-top:0.6rem;font-size:14px;">
-  IBAN: ES95 1583 0001 2608 6325
+  IBAN: ES95 1583 0001 1691 2608 6325
 </p>
 
 <p style="text-align:center;margin-top:25px;font-style:italic;">

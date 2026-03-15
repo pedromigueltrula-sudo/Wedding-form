@@ -471,7 +471,7 @@ export default function App() {
                                 <p>Hemos recibido tus respuestas correctamente.</p>
                                 <p style={{ marginTop: '1rem' }}>¡Tenemos muchas ganas de celebrar este día contigo!</p>
                                 <p style={{ marginTop: '1.2rem' }}>Vuestra presencia es nuestro mejor regalo. Si además queréis tener un detalle, podéis ayudarnos en nuestro viaje de novios:</p>
-                                <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: ES95 1583 0001 2608 6325</p>
+                                <p style={{ fontWeight: 'bold', marginTop: '0.4rem' }}>IBAN: ES95 1583 0001 1691 2608 6325</p>
                             </FormStep>
                         </div>
                     )}
